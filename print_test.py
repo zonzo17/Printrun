@@ -24,10 +24,10 @@ while not p.online:
 print('Connected to printer !')
 
 print('Sending home instruction (G28)')
-#p.send('G28')
+p.send('G28')
 print('Sending X Y Z instructions (G92)')
 
-p.send('G1 X200 Y200 Z200')
+p.send('G1 X100 Y100 Z100')
 
 print('Disconnecting')
 p.disconnect()
