@@ -24,14 +24,22 @@ while not p.online:
 print('Connected to printer !')
 
 # Je fais une for loop pour faire bouger la cam
-#Position = []
-#for i in Position
+
+print('Sending X Y Z instructions (G92)')
+
+#X = ['G0 X100','G0 Y100','G0 X100']
+#Position = 0
+#for i in X:
+#    Position = Position + i 
+#    p.send(Position)
+    
+
 
 print('Sending home instruction (G28)')
 #p.send('G28')
-print('Sending X Y Z instructions (G92)')
 
-p.send('G0 X100 Y100 Z100')
+
+
 
 print('Disconnecting')
 p.disconnect()

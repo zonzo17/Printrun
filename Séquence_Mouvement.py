@@ -6,16 +6,9 @@ import re
 import unittest
 import atexit
 
-# Add relative pygcode to path
-from testutils import add_pygcode_to_path, str_lines
-add_pygcode_to_path()
 
-# Units under test
-from pygcode import gcodes
-from pygcode import words
-from pygcode import machine
 
-from pygcode.exceptions import GCodeWordStrError 
+
 
 atexit.register(lambda: input("\nPress Enter to exit."))
 
@@ -56,3 +49,7 @@ class MachineGCodeProcessingTests(unittest.TestCase):
         ]
         self.assert_processed_lines(line_data, m)
 p.send(line_data)
+
+
+print('Disconnecting')
+p.disconnect()
