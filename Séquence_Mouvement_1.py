@@ -6,10 +6,6 @@ import re
 import unittest
 import atexit
 
-
-
-
-
 atexit.register(lambda: input("\nPress Enter to exit."))
 
 print('          YOOOOO WHATS UP CRONUS !!!           ')
@@ -48,7 +44,7 @@ class MachineGCodeProcessingTests(unittest.TestCase):
             ('   x0 y0',        {'X':0, 'Y':0}),
         ]
         self.assert_processed_lines(line_data, m)
-p.send(line_data)
+
 
 
 print('Disconnecting')
