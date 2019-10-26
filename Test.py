@@ -26,14 +26,14 @@ print('Connected to printer !')
 
 # Setup de l'imprimante
 printer.send('G21') # Spécifie que les unités sont en mm
-printer.send('G90') # Spécifie que les translations sont sont vers un point absolu
+printer.send('G90') # Spécifie que les translations sont vers un point absolu
 
 
 
 
 
 # Positions à visiter avec l'angle de caméra à adopter:
-# Vous pouvez changer la structure de donné pour vos besoins
+# On peut changer la structure de donné 
 # ex: p_nord_est = { "position": [x,y,z], "orientation": [pan, tilt] }
 # ex: p_nord_est = [x,y,z,pan,tilt]
 # ex: p_nord_est = "G0 Xx Yy Zz"  <- direct ne GCODE
