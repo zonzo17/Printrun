@@ -60,7 +60,7 @@ p_sud_est = {
         #"pan": 135,
         #"tilt": 135}
 
-# Liste de points à visiter durant la loupe
+# Liste de points à visiter durant la loop
 point_list = [ p_nord_ouest, p_nord_est, p_sud_ouest, p_sud_est ]
 
 # Fonction pour convertir les points en instruction GCODE
