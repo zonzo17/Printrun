@@ -26,7 +26,7 @@ print('Connected to printer !')
 # Je fais une for loop pour faire bouger la cam
 
 print('Sending X Y Z instructions (G92)')
-p.send('G0 X100 Y100 Z100 ')
+p.send('G0 X100 Y100 Z100 F1200')
 
     
 
