@@ -41,33 +41,45 @@ Home = {
         'z': 0,
         "Orientation": "r" }
 p1 = {
-        'x': 20,
+        'x': 50,
         'y': 0,
-        'z': 200,
+        'z': 95,
         "Orientation": "1" }# Angle des servos moteurs
-         
-p2 = {
-        'x': 235,
-        'y': 0,
-        'z': 200,
-        "Orientation": "2" }
 
+p2 = {
+        'x': 118,
+        'y': 0,
+        'z': 95,
+        "Orientation": "2" }
+         
 p3 = {
-        'x': 235,
-        'y': 235,
-        'z': 200,
+        'x': 200,
+        'y': 0,
+        'z': 95,
         "Orientation": "3" }
 
 p4 = {
-        'x': 10,
+        'x': 200,
         'y': 235,
-        'z': 200,
+        'z': 95,
         "Orientation": "4" }
+
+p5 = {
+        'x': 118,
+        'y': 235,
+        'z': 95,
+        "Orientation": "5" }
+
+p6 = {
+        'x': 30,
+        'y': 235,
+        'z': 95,
+        "Orientation": "6" }
 
 
 # Liste de points à visiter durant la loop
-point_list = [p1 , p2, p3, p4]
-
+point_list = [p1 , p2, p3, p4, p5, p6]
+ 
 # Fonction pour convertir les points en instruction GCODE
 
 def pointToGcode (point):
@@ -92,7 +104,7 @@ while 1:
                 # On envoi les commandes aux appareils respectifs
                 printer.send(gcode)
                 time.sleep(2)
-                ArduinoUnoSerial.write(bytes(point['Orientation'],'utf-8'))
+                ArduinoUnoSerial.write(bytes(point["Orientation"],"utf-8"))
                 # On attend le temps prédéterminé
                 time.sleep(pause_s)
 

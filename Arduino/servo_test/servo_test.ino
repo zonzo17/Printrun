@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 Servo Pan;   // create servo object to control a servo
-Servo Tilt; 
+Servo Tilt;
 
 byte inByte;
 
@@ -38,22 +38,40 @@ void loop()
       case '2':
         // Position 2
         Serial.println("Move to point 2");
-        Pan.write(180);
-        Tilt.write(35);
+        Pan.write(45);
+        Tilt.write(160);
         break;
+
       case '3':
         // Position 3
         Serial.println("Move to point 3");
-        Pan.write(90);
-        Tilt.write(55);
+        Pan.write(180);
+        Tilt.write(35);
         break;
 
       case '4':
         // Position 4
         Serial.println("Move to point 4");
+        Pan.write(90);
+        Tilt.write(55);
+        break;
+
+
+      case '5':
+        // Position 5
+        Serial.println("Move to point 5");
+        Pan.write(40);
+        Tilt.write(70);
+        break;
+
+      case '6':
+        // Position 6
+        Serial.println("Move to point 6");
         Pan.write(0);
         Tilt.write(55);
         break;
+
+
 
       case 'r':
         Serial.println("Return to Home");
@@ -64,6 +82,7 @@ void loop()
       case '\n':
       case '\r':
         break;
+        
       default:
         // statements
         Serial.println("Command unavailable");
