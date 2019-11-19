@@ -41,44 +41,39 @@ Home = {
         'z': 0,
         "Orientation": "r" }
 p1 = {
-        'x': 50,
-        'y': 0,
-        'z': 95,
-        "Orientation": "1" }# Angle des servos moteurs
+        'x': 0,
+        'y': 235,
+        'z': 30,
+        "Orientation": "1" }# Angle des servos moteur
 
 p2 = {
-        'x': 118,
+        'x': 0,
         'y': 0,
-        'z': 95,
-        "Orientation": "2" }
-         
+        'z': 50,
+        "Orientation": "1" }# Angle des servos moteur
+
 p3 = {
-        'x': 200,
-        'y': 0,
-        'z': 95,
-        "Orientation": "3" }
+        'x': 235,
+        'y': 235,
+        'z': 30,
+        "Orientation": "2" }# Angle des servos moteur
 
 p4 = {
-        'x': 200,
+        'x': 235,
         'y': 235,
-        'z': 95,
-        "Orientation": "4" }
+        'z': 30,
+        "Orientation": "3" }# Angle des servos moteur
 
 p5 = {
-        'x': 118,
-        'y': 235,
-        'z': 95,
-        "Orientation": "5" }
-
-p6 = {
         'x': 30,
         'y': 235,
-        'z': 95,
-        "Orientation": "6" }
+        'z': 50,
+        "Orientation": "4" }# Angle des servos moteur
+
 
 
 # Liste de points à visiter durant la loop
-point_list = [p1 , p2, p3, p4, p5, p6]
+point_list = [p1, p2, p3, p4, p5]
  
 # Fonction pour convertir les points en instruction GCODE
 
@@ -93,9 +88,6 @@ while 1:
         for point in point_list:
                 # Calcul du gcode à envoyer à l'imprimante
                 gcode = pointToGcode(point)
-
-                # Calcul de la trame série à envoyer au arduino, à faire dans le futur
-                # orientation_message = pointToPanTiltCommand(point)
 
                 print("\nNouveau point")
                 print(point)

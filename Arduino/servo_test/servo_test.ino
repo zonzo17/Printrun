@@ -1,92 +1,41 @@
+/* Sweep
+ by BARRAGAN <http://barraganstudio.com>
+ This example code is in the public domain.
+
+ modified 8 Nov 2013
+ by Scott Fitzgerald
+ http://www.arduino.cc/en/Tutorial/Sweep
+*/
+
 #include <Servo.h>
 
 Servo Pan;   // create servo object to control a servo
-Servo Tilt;
+Servo Tilt; // twelve servo objects can be created on most boards
 
-byte inByte;
 
-void setup()
+int angle = 0;    // variable to store the servo position
+
+void setup() 
 {
   Serial.begin(9600);
   Pan.attach(9);  // attaches the servo on pin 9 to the servo object
   Tilt.attach(10);
-  Pan.write(45);
-  Tilt.write(5);
-  delay(1000);
-
-
-  Serial.println("Ready");
 }
 
-void loop()
+void loop() 
 {
-  // if we get a valid byte, read analog ins:
-  if (Serial.available() > 0) {
-    // get incoming byte:
-    inByte = Serial.read();
-
-
-    switch (inByte)
-    {
-      case '1':
-        // Position 1
-        Serial.println("Move to point 1");
-        Pan.write(90);
-        Tilt.write(160);
-        break;
-
-      case '2':
-        // Position 2
-        Serial.println("Move to point 2");
-        Pan.write(45);
-        Tilt.write(160);
-        break;
-
-      case '3':
-        // Position 3
-        Serial.println("Move to point 3");
-        Pan.write(180);
-        Tilt.write(35);
-        break;
-
-      case '4':
-        // Position 4
-        Serial.println("Move to point 4");
-        Pan.write(90);
-        Tilt.write(55);
-        break;
-
-
-      case '5':
-        // Position 5
-        Serial.println("Move to point 5");
-        Pan.write(40);
-        Tilt.write(70);
-        break;
-
-      case '6':
-        // Position 6
-        Serial.println("Move to point 6");
-        Pan.write(0);
-        Tilt.write(55);
-        break;
-
-
-
-      case 'r':
-        Serial.println("Return to Home");
-        Pan.write(45);
-        Tilt.write(5);
-        break;
-
-      case '\n':
-      case '\r':
-        break;
-        
-      default:
-        // statements
-        Serial.println("Command unavailable");
-        break;
-    }
+  for (angle = 0; angle <= 90; angle += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree   
+    Pan.write(angle);              // tell servo to go to position in variable 'pos'
+    delay(15);                      // waits 15ms for the servo to reach the position
+    Tilt.write(angle);
+    delay(15); 
+    
+  }
+  for (angle = 90; angle >= 0; angle -= 1) { // goes from 180 degrees to 0 degrees
+    Pan.write(angle);              // tell servo to go to position in variable 'pos'
+    delay(15);                        // waits 15ms for the servo to reach the position
+    Tilt.write(angle);
+    delay(15);
   }
 }
