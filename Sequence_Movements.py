@@ -11,7 +11,7 @@ from printrun.printcore import printcore
 
 printer = printcore('COM5', 115200)
 
-ArduinoUnoSerial = serial.Serial('COM25',9600)
+ArduinoUnoSerial = serial.Serial('COM7',9600)
 time.sleep(2)
 
 
@@ -82,7 +82,7 @@ def pointToGcode (point):
 
 
 # Je fais une for loop pour faire bouger la cam à chaque point de la liste
-pause_s = 10 
+pause_s = 20 
 # J'attend une minute par point
 while 1:
         for point in point_list:
